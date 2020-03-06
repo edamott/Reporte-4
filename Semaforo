@@ -25,14 +25,14 @@ BCF STATUS, RP0
 INICIO
 BSF PORTA,2
 BSF PORTB,0
-call tiempo ; dura 999,995 ms
+call tiempo 
 
 RLF PORTB,1     
-call tiempo ; dura 999,998 ms
+call tiempo 
 MOVLW b'00000001'
-MOVWF PORTA ; pasan 6 segundos exactos  
+MOVWF PORTA 
 RLF PORTB,1
-call tiempo ; dura 999,998 ms
+call tiempo 
 
 RLF PORTA,1            
 call tiempo 
@@ -41,11 +41,11 @@ BCF PORTB,2
 
 GOTO INICIO
  
-tiempo: movlw d'3' ;169
+tiempo: movlw d'3' 
 	movwf i
-iloop: movlw d'61' ;221
+iloop: movlw d'61' 
 	movwf j
-jloop:  movlw d'130' ;8
+jloop:  movlw d'130' 
 	movwf k
 kloop: decfsz k,f
 	goto kloop
